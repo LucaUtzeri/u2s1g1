@@ -3,24 +3,24 @@ package lucautzeri.u2s1g1;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
 @Getter
 @Setter
 
-public class Topping extends MenuList{
-    private List<Topping> toppings;
+public class Topping extends MenuList {
+    private String name;
 
-    public Topping(){}
-
-    public Topping(String name, int calories, double price, List<Topping> toppings) {
-        super(name, calories, price);
-        this.toppings = toppings;
+    public Topping(String name, int calories, double price) {
+        super(calories, price);
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Topping{" +
-                "toppings=" + toppings +
+                "name='" + name + '\'' +
+                ", calories=" + calories +
+                ", price=" + price +
                 '}';
     }
 }
+
